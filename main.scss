@@ -37,6 +37,7 @@ $Inter: "Inter", sans-serif;
 
     @include media("<=phone") {
         background-position: bottom left;
+        background-size: contain;
     }
 }
 
@@ -53,8 +54,10 @@ $Inter: "Inter", sans-serif;
     padding: 100px 150px; // Top bottom & Left right
 
     @include media("<=phone") {
+        background-size: contain;
+        background-position: right 20px top 20px;
         flex-direction: column-reverse;
-        padding: 20px;
+        padding: 0;
     }
 }
 
@@ -68,9 +71,10 @@ $Inter: "Inter", sans-serif;
     // border: 1px solid red;
 
     @include media("<=phone") {
-        width: 100%;
-        text-align: center;
         background-position: center top;
+        background-size: 45px;
+        width: fit-content;
+        padding: 0;
     }
 
     p {
@@ -82,7 +86,22 @@ $Inter: "Inter", sans-serif;
         position: relative;
         width: 110%;
 
-        
+        @include media("<=phone") {
+            text-align: center;
+            font-size: 16px;
+            width: 90%;
+            padding-left: 15px;
+    }
+    }
+
+    .block-br {
+        @include media("<=desktop") {
+            display: none;
+        }
+
+        @include media("<=tablet") {
+            display: block;
+        }
     }
 
     br {
@@ -93,16 +112,45 @@ $Inter: "Inter", sans-serif;
 
     .name, .profession {
         font-size: 20px;
+        font-family: $Inter;
+
+        @include media("<=phone") {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            font-size: 17px;
+        }
     }
 
     .profession {
         color: $grayish-blue;
         font-weight: 300;
+
+        @include media("<=phone") {
+            padding-top: 5px;
+            margin-bottom: 120px;
+        }
     }
 }
 
 .right-col {
     width: 50%;
+
+    @include media("<=phone") {
+        width: 100%;
+    }
+
+    .img-box {
+        img {
+            border-radius: 10px;
+
+            @include media("<=phone") {
+                width: 100%;
+                padding: 40px;
+                padding-top: 50px;
+            }
+        }
+    }
 
     .arrows {
         position: relative;
@@ -114,7 +162,13 @@ $Inter: "Inter", sans-serif;
         box-shadow: 0px 10px 25px 0px $grayish-blue;
         border: none;
         transform: translate(90%, -60%);
-        -ms-transform: translate(-50%, -60%);
+        -ms-transform: translate(90%, -60%);
+
+        @include media("<=phone") {
+            width:28%;
+            transform: translate(120px, -70px);
+            -ms-transform: translate(120px, -70px);
+        }
         
         .arrow-left, .arrow-right {
             height: 10px;
@@ -151,10 +205,3 @@ $Inter: "Inter", sans-serif;
       opacity: 1;
     }
   }
-
-footer {
-  background-image: url('images/pattern-curve.svg');
-  background-size: contain;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-}
