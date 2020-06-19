@@ -1,38 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Coding Bootcamp Testimonials Slider">
+  <meta property="og:site_name" content="Coding Bootcamp Testimonials Slider">
+  <meta property="og:url" content="http://coding-bootcamp-testimonials.netlify.com">
+  <meta property="og:description"
+    content="Frontend Mentor is a website here web developers practice and improve their frontend development skills. This website is one of the challenges.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://coding-bootcamp-testimonial.netlify.app/images/image-john.jpg">
 
+  <title>DevMushref | Coding Bootcamp Testimonials Slider</title>
+  <!-- Links -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+  <div class="container">
+      <div class="slide fade">
+        <div class="left-col">
+          <p class="bio">
+            “ I’ve been interested in coding for a while <br> but never taken the jump, until now.
+            I <br> couldn’t recommend this course enough. <br> I’m now in the job of my dreams and so <br>
+            excited about the future. ”
+            <br>
+            <br>
+          <span>
+            <span class="name"><b>Tanya Sinclair</b></span>
+            <span class="profession">UX Engineer</span>
+          </span>
+          </p>
+        </div>
+        <div class="right-col">
+          <div class="img-box">
+            <img src="images/image-tanya.jpg" alt="profile photo of Tanya">
+          </div>
+          <div class="arrows">
+            <button class="arrow-left" onClick="clickSlide(-1)">
+              <img src="images/icon-prev.svg" alt="left arrow svg prev icon">
+            </button>
+            <button class="arrow-right" onClick="clickSlide(1)">
+              <img src="images/icon-next.svg" alt="right arrow svg next icon">
+            </button>
+          </div>
+        </div>
+      </div>
 
-  “ I’ve been interested in coding for a while but never taken the jump, until now. 
-  I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
-  excited about the future. ”
-
-  Tanya Sinclair
-  UX Engineer
-
-  “ If you want to lay the best foundation possible I’d recommend taking this course. 
-  The depth the instructors go into is incredible. I now feel so confident about 
-  starting up as a professional developer. ”
-
-  John Tarkpor
-  Junior Front-end Developer
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <div class="slide fade">
+        <div class="left-col">
+          <p class="bio">
+            “ If you want to lay the best foundation <br> possible I’d recommend taking this <br> course.
+            The depth the instructors go into <br> is incredible. I now feel so confident about <br>
+            starting up as a professional developer. ”
+            <br>
+            <br>
+          <span>
+            <span class="name"><b>John Tarkpor</b></span>
+            <span class="profession">Junior Front-end Developer</span>
+          </span>
+          </p>
+        </div>
+        <div class="right-col">
+          <div class="img-box">
+            <img src="images/image-john.jpg" alt="profile photo of John">
+          </div>
+          <div class="arrows">
+            <button class="arrow-left" onClick="clickSlide(-1)">
+              <img src="images/icon-prev.svg" alt="left arrow svg prev icon">
+            </button>
+            <button class="arrow-right" onClick="clickSlide(1)">
+              <img src="images/icon-next.svg" alt="right arrow svg next icon">
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <!-- Nothing here...Darkness Abyss -->
+      </footer>
   </div>
+
+  <script async src="slider.js"></script>
 </body>
 </html>
