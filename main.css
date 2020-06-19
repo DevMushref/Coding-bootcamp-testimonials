@@ -90,11 +90,6 @@ html, body {
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .left-col .block-br {
-    display: block;
-  }
-}
 @media (max-width: 360px) {
   .left-col br {
     display: none;
