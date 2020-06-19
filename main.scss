@@ -95,7 +95,7 @@ $Inter: "Inter", sans-serif;
     }
 
     .block-br {
-        @include media("<=desktop") {
+        @include media(">=tablet") {
             display: none;
         }
     }

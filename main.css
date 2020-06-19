@@ -85,7 +85,7 @@ html, body {
     padding-left: 15px;
   }
 }
-@media (max-width: 1366px) {
+@media (min-width: 768px) {
   .left-col .block-br {
     display: none;
   }
