@@ -2,206 +2,219 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
 /***************************
-         Responsive
-****************************/
-@import 'responsive';
-
-
-/***************************
          Settings
 ****************************/
 html {
     box-sizing: border-box;
-}
-
-html, body {
-    height: 100vh;
-    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 32px;
 }
 
 *, *:before, *:after {
+    padding: 0;
+    margin: 0;
     box-sizing: inherit;
 }
 
 $dark-blue: hsl(240, 38%, 20%);
 $grayish-blue: hsl(240, 18%, 77%);
-$Inter: "Inter", sans-serif;
+
+/***************************
+         Responsive
+****************************/
+@mixin media-768 {
+    @media only screen and (min-width: 768px) {
+        @content;
+    }
+}
 
 /***************************
          Design start
 ****************************/
 .container {
-    background-image: url('/images/pattern-curve.svg');
-    background-repeat: no-repeat;
+    background-image: url('./images/pattern-curve.svg');
     background-position: bottom left;
-
-    @include media("<=phone") {
-        background-position: bottom left;
-        background-size: contain;
-    }
-}
-
-.slide {
-    background-image: url('/images/pattern-bg.svg');
     background-repeat: no-repeat;
-    background-size: 45em;
-    background-position: right 85px top 15px; // Right: 85px, Top: 15px
-
+    background-size: 12rem;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 100px 150px; // Top bottom & Left right
+    padding: 30px;
 
-    @include media("<=phone") {
-        background-size: contain;
-        background-position: right 20px top 20px;
-        flex-direction: column-reverse;
-        padding: 0;
+    @include media-768 {
+        background-size: 20rem;
     }
 }
 
-.left-col {
-    background-image: url('/images/pattern-quotes.svg');
-    background-repeat: no-repeat;
-    background-position: 90px 15px;
-    align-self: center;
-    width: 50%;
-    padding-top: 50px;
-    // border: 1px solid red;
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-bottom: 50px;
 
-    @include media("<=phone") {
-        background-position: center top;
-        background-size: 45px;
-        width: fit-content;
-        padding: 0;
-    }
+    .slide {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
-    p {
-        // border: 1px solid red;
-        font-weight: 300;
-        color: $dark-blue;
-        font-family: $Inter;
-        font-size: 31.8px;
-        position: relative;
-        width: 110%;
-
-        @include media("<=phone") {
-            text-align: center;
-            font-size: 16px;
-            width: 90%;
-            padding-left: 15px;
-    }
-    }
-
-    .block-br {
-        @include media("<=desktop") {
-            display: none;
+        @include media-768 {
+            flex-direction: row;
+            text-align: left;
         }
 
-        @include media("<=tablet") {
-            display: block;
-        }
-    }
-
-    br {
-        @include media("<=phone") {
-            display: none;
-        }
-    }
-
-    .name, .profession {
-        font-size: 20px;
-        font-family: $Inter;
-
-        @include media("<=phone") {
-            text-align: center;
+        .slide-text {
+            margin-top: 30px;
+            padding-top: 30px;
             display: flex;
             justify-content: center;
-            font-size: 17px;
-        }
-    }
+            align-items: center;
+            flex-direction: column;
 
-    .profession {
-        color: $grayish-blue;
-        font-weight: 300;
+            background-image: url('./images/pattern-quotes.svg');
+            background-repeat: no-repeat;
+            background-size: 60px;
+            background-position: top center;
 
-        @include media("<=phone") {
-            padding-top: 5px;
-            margin-bottom: 120px;
-        }
-    }
-}
+            @include media-768 {
+                background-position: 22% top;
+                background-size: 72px;
+                align-items: flex-start;
+            }
 
-.right-col {
-    width: 50%;
+            .testimonial {
+                font-weight: 300;
+                font-size: 0.7rem;
+                color: $dark-blue;
 
-    @include media("<=phone") {
-        width: 100%;
-    }
+                @include media-768 {
+                    font-size: 0.9rem;
+                }
+            }
 
-    .img-box {
-        img {
-            border-radius: 10px;
+            .author {
+                margin-top: 20px;
+                color: $dark-blue;
+                font-size: 0.5rem;
+                font-weight: 700;
 
-            @include media("<=phone") {
-                width: 100%;
-                padding: 40px;
-                padding-top: 50px;
+                span {
+                    color: $grayish-blue;
+                    font-weight: 500;
+                    display: block;
+                }
             }
         }
     }
 
-    .arrows {
-        position: relative;
-        
-        width: 16%;
-        height: 100%;
-        background-color: #fff;
-        border-radius: 45px;
-        box-shadow: 0px 10px 25px 0px $grayish-blue;
-        border: none;
-        transform: translate(90%, -60%);
-        -ms-transform: translate(90%, -60%);
+    .slide-img {
+        width: inherit;
+        height: inherit;
+        margin: 0 auto;
+        padding: 40px;
+        background-image: url('./images/pattern-bg.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
 
-        @include media("<=phone") {
-            width:28%;
-            transform: translate(120px, -70px);
-            -ms-transform: translate(120px, -70px);
+        @include media-768 {
+            margin-left: -100px;
+            z-index: -1;
         }
-        
-        .arrow-left, .arrow-right {
-            height: 10px;
-            cursor: pointer;
-            border: none;
-            background: none;
-            height: 100%;
-            padding: 15px;
+
+        img {
+            width: 300px;
+            height: inherit;
+
+            @include media-768 {
+                padding-top: 20px;
+                width: 300px;
+            }
         }
     }
 }
 
+.arrows {
+    position: absolute;
+    top: 315px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 45px;
+    box-shadow: -20px 12px 20px 0 hsla(240, 18%, 77%, 0.52);
+    border-radius: 50px;
+    background-color: #fff;
+    overflow: hidden;
+
+    @include media-768 {
+        width: 80px;
+        height: 40px;
+        top: 340px;
+        transform: translate(0);
+        left: calc(100% - 320px);
+    }
+
+    .arrow-left {
+        left: 0;
+    }
+
+    .arrow-right {
+        right: 0;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+            background-color: antiquewhite;
+        }
+    }
+
+    .arrow-left::after,
+    .arrow-right::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/***************************
+        Fade Animation
+****************************/
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
-  }
+}
 
-  @-webkit-keyframes fade {
+@-webkit-keyframes fade {
     from {
       opacity: 0.4;
     }
     to {
       opacity: 1;
     }
-  }
+}
 
-  @keyframes fade {
+@keyframes fade {
     from {
       opacity: 0.4;
     }
     to {
       opacity: 1;
     }
-  }
+}
