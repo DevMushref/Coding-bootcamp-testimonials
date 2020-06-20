@@ -58,6 +58,7 @@ html {
   .slider .slide {
     flex-direction: row;
     text-align: left;
+    transform: scale(1.2);
   }
 }
 .slider .slide .slide-text {
