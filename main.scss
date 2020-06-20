@@ -77,7 +77,7 @@ $grayish-blue: hsl(240, 18%, 77%);
         @include media-768 {
             flex-direction: row;
             text-align: left;
-            transform: scale(1.2);
+            transform: scale(1.4);
         }
 
         .slide-text {
@@ -118,7 +118,7 @@ $grayish-blue: hsl(240, 18%, 77%);
                 span {
                     color: $grayish-blue;
                     font-weight: 500;
-                    display: block;
+                    display: inline;
                 }
             }
         }
