@@ -32,6 +32,11 @@ html {
   align-items: center;
   padding: 30px;
 }
+@media only screen and (min-width: 360px) {
+  .container {
+    background-size: 10rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   .container {
     background-size: 20rem;
@@ -75,8 +80,8 @@ html {
 }
 @media only screen and (min-width: 768px) {
   .slider .slide .slide-text {
-    background-position: 22% top;
-    background-size: 72px;
+    background-position: 17% top;
+    background-size: 65px;
     align-items: flex-start;
   }
 }
@@ -87,7 +92,7 @@ html {
 }
 @media only screen and (min-width: 768px) {
   .slider .slide .slide-text .testimonial {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 .slider .slide .slide-text .author {
@@ -105,7 +110,7 @@ html {
   width: inherit;
   height: inherit;
   margin: 0 auto;
-  padding: 40px;
+  padding: 0 20px 20px 20px;
   background-image: url("./images/pattern-bg.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -114,23 +119,31 @@ html {
 @media only screen and (min-width: 768px) {
   .slider .slide-img {
     margin-left: -100px;
+    padding: 40px;
     z-index: -1;
   }
 }
 .slider .slide-img img {
-  width: 300px;
+  margin-top: 45px;
+  width: 350px;
   height: inherit;
+  border-radius: 10px;
+}
+@media only screen and (min-width: 360px) {
+  .slider .slide-img img {
+    width: 240px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .slider .slide-img img {
-    padding-top: 20px;
-    width: 300px;
+    margin-top: 25px;
+    width: 350px;
   }
 }
 
 .arrows {
   position: absolute;
-  top: 315px;
+  top: 370px;
   left: 50%;
   transform: translateX(-50%);
   width: 90px;
@@ -140,11 +153,16 @@ html {
   background-color: #fff;
   overflow: hidden;
 }
+@media only screen and (min-width: 360px) {
+  .arrows {
+    top: 260px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .arrows {
     width: 80px;
     height: 40px;
-    top: 340px;
+    top: 395px;
     transform: translate(0);
     left: calc(100% - 320px);
   }
